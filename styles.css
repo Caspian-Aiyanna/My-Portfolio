@@ -1,0 +1,293 @@
+/* =========================================
+   WILDLIFE GREEN THEME — GLOBAL COLORS
+========================================= */
+:root{
+  --wild-green: #0f3d2e;      /* page background (forest) */
+  --wild-deep:  #09472f;      /* navbar/footer / deeper green */
+  --wild-card:  #03633c;      /* card background */
+  --wild-accent:#000000;      /* buttons/badges accent */
+  --text-light:#d8ca07;       /* body text */
+  --text-accent:#000000f8;      /* headings (soft yellow) */
+
+  /* Bootstrap mappings */
+  --bs-body-bg: var(--wild-green);
+  --bs-body-color: var(--text-light);
+  --bs-primary: var(--wild-accent);
+}
+
+/* =========================================
+   BASE TYPOGRAPHY & BODY
+========================================= */
+body{
+  font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  background-color: var(--wild-green);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5{
+  color: var(--text-accent);
+  font-weight: 600;
+  letter-spacing: .3px;
+  margin-top: .5rem;
+}
+
+/* Links: yellow → green hover */
+a{
+  color: var(--text-accent);
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+a:hover{
+  color: var(--wild-accent);
+  text-decoration: underline;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar{
+  background-color: var(--wild-deep) !important;
+  border-bottom: 1px solid var(--wild-accent);
+  padding: .6rem 0;
+}
+.navbar-brand{
+  color: var(--text-accent) !important;
+  font-weight: 700;
+}
+.navbar .nav-link{
+  color: var(--text-light) !important;
+  text-decoration: none;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active{
+  color: var(--text-accent) !important;
+  font-weight: 600;
+}
+
+/* Ensure toggler icon visible on dark navbar */
+.navbar-light .navbar-toggler{ border-color: rgba(255,255,255,.25); }
+.navbar-light .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+.btn-primary{
+  background-color: var(--wild-accent);
+  border-color: var(--wild-accent);
+  color: var(--text-light);
+}
+.btn-primary:hover{
+  filter: brightness(1.1);
+}
+
+.btn-outline-primary{
+  color: var(--text-accent);
+  border-color: var(--wild-accent);
+}
+.btn-outline-primary:hover{
+  background-color: var(--wild-accent);
+  color: var(--text-light);
+  border-color: var(--wild-accent);
+}
+
+/* Small theme toggle button in navbar (if present) */
+#themeToggle.btn{ padding: .35rem .7rem; }
+
+/* =========================================
+   CARDS
+========================================= */
+.card{
+  border: 0;
+  border-radius: 16px;
+  background-color: var(--wild-card);
+  color: var(--text-light);
+  box-shadow: 0 8px 22px rgba(0,0,0,.3);
+}
+.card h4{
+  color: var(--text-accent);
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
+}
+.card p{ margin-bottom: .4rem; }
+
+/* Subtle hover lift */
+.card:hover{
+  transform: translateY(-4px);
+  transition: .25s ease;
+  box-shadow: 0 20px 25px rgba(0,0,0,.28);
+}
+
+/* =========================================
+   BADGES
+========================================= */
+.badge{
+  background-color: var(--wild-accent) !important;
+  color: var(--text-light);
+  margin-right: .25rem;
+  font-size: .8rem;
+  padding: .35em .6em;
+  border-radius: 6px;
+}
+
+/* =========================================
+   PROJECT IMAGES (cards)
+========================================= */
+.project-images{
+  display:flex; flex-wrap:wrap; gap:1rem; margin:1rem 0;
+}
+.project-images img{
+  max-height:200px; width:auto;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
+  transition: transform .2s ease;
+}
+.project-images img:hover{ transform: scale(1.03); }
+
+/* =========================================
+   GALLERY (works.html)
+========================================= */
+.gallery-grid img,
+.gallery-img{
+  width:100%; height:220px; object-fit:cover;
+  border-radius:12px; margin-bottom:.75rem;
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
+}
+
+/* =========================================
+   RESPONSIVE TWEAKS
+========================================= */
+@media (max-width:768px){
+  .project-images{ flex-direction:column; }
+  .project-images img{ width:100%; max-width:100%; height:auto; }
+  .gallery-grid img, .gallery-img{ height:200px; }
+}
+
+/* =========================================
+   PROJECTS PAGE BACKGROUND (optional hero)
+========================================= */
+body.projects-page{
+  /* Optional textured hero background; keep or remove */
+  background-image:
+    radial-gradient(ellipse at top, rgba(30,123,85,.25), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(21,71,52,.35), transparent 60%),
+    url("img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* Projects cards stay readable if a bright bg image is used */
+body.projects-page .card{
+  background-color: rgba(27,74,55,.92);
+  backdrop-filter: blur(2px);
+}
+
+/* =========================================
+   BLOCKQUOTES / TYPO HELPERS
+========================================= */
+.blockquote{
+  font-size:1.05rem;
+  color:#eaeaea;
+  border-left:4px solid var(--wild-accent);
+  padding-left:.75rem; margin-left:.25rem;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.footer{
+  background-color: var(--wild-deep);
+  color: var(--text-light);
+  border-top:1px solid var(--wild-accent);
+  padding:1.5rem 0; text-align:center;
+}
+.footer .footer-links a{ color: var(--text-accent); }
+.footer .footer-links a:hover{
+  color: var(--wild-accent);
+  text-decoration: underline;
+}
+#backToTop{ padding:.3rem .6rem; }
+
+/* =========================================
+   DARK THEME (optional toggle)
+========================================= */
+:root[data-bs-theme="dark"] body{
+  background-color:#09261b; color:#e7fbe6;
+}
+:root[data-bs-theme="dark"] .navbar{
+  background-color:#0d2f21 !important; border-color:#195d42;
+}
+:root[data-bs-theme="dark"] .navbar .nav-link{ color:#e7fbe6 !important; }
+:root[data-bs-theme="dark"] .navbar .nav-link.active,
+:root[data-bs-theme="dark"] .navbar .nav-link:hover{ color:#9fe2b0 !important; }
+
+:root[data-bs-theme="dark"] .card{
+  background-color:#103826; color:#e7fbe6;
+  box-shadow:0 8px 22px rgba(0,0,0,.45);
+}
+:root[data-bs-theme="dark"] .badge.bg-secondary{ background-color:#195d42 !important; }
+
+:root[data-bs-theme="dark"] .footer{
+  background-color:#0d2f21; color:#cfe7d8;
+  border-top-color:#195d42;
+}
+
+/* Keep headings readable in dark */
+:root[data-bs-theme="dark"] h1,
+:root[data-bs-theme="dark"] h2,
+:root[data-bs-theme="dark"] h3,
+:root[data-bs-theme="dark"] h4,
+:root[data-bs-theme="dark"] h5{
+  color:#eaf79a; /* softer yellow in dark */
+}
+/* =========================================
+   WILDLIFE THEME BUTTONS
+========================================= */
+
+/* Solid button — bright green glow + bold text */
+.btn-wild {
+  background-color: var(--wild-accent);
+  color: var(--text-light);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 2px solid var(--wild-accent);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 10px rgba(30, 123, 85, 0.4);
+}
+
+.btn-wild:hover {
+  background-color: #25a36f; /* lighter wild green */
+  color: var(--text-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(37, 163, 111, 0.6);
+}
+
+/* Outline variant — hollow with glowing border */
+.btn-wild-outline {
+  background-color: transparent;
+  color: var(--text-accent);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 2px solid var(--wild-accent);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-wild-outline:hover {
+  background-color: var(--wild-accent);
+  color: var(--text-light);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(30, 123, 85, 0.6);
+}
+
+/* For smaller versions (optional) */
+.btn-wild.btn-sm, .btn-wild-outline.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
