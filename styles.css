@@ -148,6 +148,23 @@ a:hover{
 
 /* Small theme toggle button in navbar (if present) */
 #themeToggle.btn{ padding: .35rem .7rem; }
+/* NatGeo-style yellow rectangle icon */
+.natgeo-icon {
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  border: 2px solid #FFD700; /* classic NatGeo yellow */
+  margin-right: 6px;
+  vertical-align: middle;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+/* Optional: subtle hover glow */
+.natgeo-btn:hover .natgeo-icon {
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+}
+
 
 /* =========================================
    CARDS
