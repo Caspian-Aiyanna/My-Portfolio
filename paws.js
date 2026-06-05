@@ -11,7 +11,7 @@ let currentAnimal = animals[Math.floor(Math.random() * animals.length)];
 
 let lastX = 0;
 let lastY = 0;
-let isRight = false; 
+let isRight = false;
 
 // A small debounce/throttle state
 let ticking = false;
@@ -22,30 +22,30 @@ document.addEventListener('mousemove', (e) => {
   requestAnimationFrame(() => {
     const x = e.pageX;
     const y = e.pageY;
-    
+
     if (lastX === 0 && lastY === 0) {
       lastX = x;
       lastY = y;
       ticking = false;
       return;
     }
-    
+
     const dx = x - lastX;
     const dy = y - lastY;
     const dist = Math.sqrt(dx * dx + dy * dy);
-    
+
     const threshold = currentAnimal === 'tiger' ? 80 : currentAnimal === 'bear' ? 65 : 40;
-    
+
     if (dist > threshold) {
       const angle = Math.atan2(dy, dx);
-      const rotation = angle * (180 / Math.PI) + 90; 
-      
+      const rotation = angle * (180 / Math.PI) + 90;
+
       const perpAngle = angle + (isRight ? Math.PI / 2 : -Math.PI / 2);
       const displacement = currentAnimal === 'cat' ? 12 : 24;
-      
+
       const posX = x + Math.cos(perpAngle) * displacement;
       const posY = y + Math.sin(perpAngle) * displacement;
-      
+
       const paw = document.createElement('div');
       paw.className = 'pug-mark';
       paw.innerHTML = SVGS[currentAnimal];
@@ -54,9 +54,9 @@ document.addEventListener('mousemove', (e) => {
       paw.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
       paw.style.opacity = '1';
       paw.style.transition = 'none';
-      
+
       document.body.appendChild(paw);
-      
+
       // Allow browser to render then animate
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -67,18 +67,18 @@ document.addEventListener('mousemove', (e) => {
           }, 300);
         });
       });
-      
+
       setTimeout(() => {
         paw.remove();
       }, 2500);
-      
+
       lastX = x;
       lastY = y;
       isRight = !isRight;
-      
+
       // Randomly change animal occasionally (10% chance)
       if (Math.random() < 0.10) {
-         currentAnimal = animals[Math.floor(Math.random() * animals.length)];
+        currentAnimal = animals[Math.floor(Math.random() * animals.length)];
       }
     }
     ticking = false;

@@ -61,6 +61,13 @@ body {
   color: var(--text-light);
   line-height: 1.7;
   overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  animation: globalPageFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes globalPageFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* Elegant Text Selection */
@@ -551,6 +558,23 @@ a:hover {
   mask-image: linear-gradient(to bottom, black 40%, transparent);
 }
 
+.bg-blog-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  background-image: url('files/images/WhatsApp%20Image%202025-05-30%20at%2021.05.56.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent);
+  mask-image: linear-gradient(to bottom, black 40%, transparent);
+}
+
 .bg-about-left,
 .bg-about-right {
   position: fixed;
@@ -565,7 +589,7 @@ a:hover {
 
 .bg-about-left {
   left: 0;
-  background-image: url('files/images/gallery5.JPG');
+  background-image: url('files/images/WhatsApp%20Image%202025-11-10%20at%2020.44.09.jpeg');
   background-position: center right;
   -webkit-mask-image: linear-gradient(to left, transparent, black 40%);
   mask-image: linear-gradient(to left, transparent, black 40%);
