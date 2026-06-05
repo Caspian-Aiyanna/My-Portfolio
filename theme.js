@@ -12,11 +12,11 @@
   function apply(theme) {
     if (theme === "dark") {
       root.setAttribute("data-bs-theme", "dark");
-      if (icon()) icon().textContent = "Light";
+      if (icon()) icon().className = "bi bi-sun-fill";
     } else {
       // Remove attribute so Bootstrap falls back to its default light palette
       root.removeAttribute("data-bs-theme");
-      if (icon()) icon().textContent = "Dark";
+      if (icon()) icon().className = "bi bi-moon-stars-fill";
     }
   }
 
