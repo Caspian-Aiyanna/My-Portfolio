@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - Harin Aiyanna C R</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Site theme -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Analytical Representation specific styles */
+    .service-card {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-icon-wrapper {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: rgba(216, 202, 7, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(216, 202, 7, 0.3);
+      color: var(--wild-accent);
+      font-size: 1.8rem;
+    }
+    .service-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .analytical-chart {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--glass-border);
+    }
+    .stat-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+    .stat-fill {
+      height: 100%;
+      background: var(--wild-accent);
+      border-radius: 3px;
+    }
+    .service-tech-stack span {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body class="services-page">
+
+  <!-- Faded Hero Background -->
+  <div class="bg-services-hero"></div>
+
+  <!-- Shared Navbar -->
+  <div id="site-nav"></div>
+
+  <section class="container py-5 fade-in-up">
+    <div class="text-center mb-5 pop-in delay-1">
+      <h1 class="display-4 fw-bold">Consulting & Research Services</h1>
+      <p class="lead" style="max-width: 700px; margin: 0 auto; color: var(--text-light);">
+        Leveraging advanced Earth Observation and Automated Machine Learning to deliver precise, actionable insights for biodiversity monitoring and landscape management.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Service 1: SDM -->
+      <div class="col-md-6 slide-in-left delay-2">
+        <div class="card service-card p-4">
+          <span class="service-tag">Ecological Modelling</span>
+          <div class="service-icon-wrapper">
+            <i class="bi bi-globe-americas"></i>
+          </div>
+          <h3 class="mb-3">Species & Habitat Distribution Modelling</h3>
+          <p>
+            Development of robust, climate-informed Species Distribution Models (SDMs). I evaluate how climate change reshapes species habitats using rigorous presence/absence statistical techniques.
+          </p>
+          <div class="service-tech-stack mb-3">
+            <span>MaxEnt</span>
+            <span>R</span>
+            <span>Zonation</span>
+            <span>QGIS</span>
+          </div>
+          <div class="analytical-chart">
+            <div class="d-flex justify-content-between text-sm mb-1">
+              <span>Predictive Accuracy</span>
+              <span class="text-white">High (AUC > 0.85)</span>
+            </div>
+            <div class="stat-bar"><div class="stat-fill" style="width: 90%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2: AutoML & EO -->
+      <div class="col-md-6 fade-in-up delay-2">
+        <div class="card service-card p-4">
+          <span class="service-tag">Data Science</span>
+          <div class="service-icon-wrapper">
+            <i class="bi bi-cpu"></i>
+          </div>
+          <h3 class="mb-3">AutoML & Multi-Source EO Fusion</h3>
+          <p>
+            Bridging the gap between raw satellite data and predictive intelligence. I process multi-sensor data (Optical, SAR, LiDAR, Thermal) and run it through scalable H2O AutoML pipelines.
+          </p>
+          <div class="service-tech-stack mb-3">
+            <span>H2O AutoML</span>
+            <span>Python</span>
+            <span>Sentinel-1/2</span>
+            <span>GEE</span>
+          </div>
+          <div class="analytical-chart">
+            <div class="d-flex justify-content-between text-sm mb-1">
+              <span>Data Processing Scale</span>
+              <span class="text-white">Continental</span>
+            </div>
+            <div class="stat-bar"><div class="stat-fill" style="width: 95%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3: Web-GIS -->
+      <div class="col-md-6 slide-in-left delay-3">
+        <div class="card service-card p-4">
+          <span class="service-tag">Development</span>
+          <div class="service-icon-wrapper">
+            <i class="bi bi-map"></i>
+          </div>
+          <h3 class="mb-3">Web-GIS & Interactive Dashboards</h3>
+          <p>
+            Transforming complex ecological data into accessible, interactive Web-GIS platforms. Perfect for policy makers and stakeholders (e.g., the BioHabs Platform).
+          </p>
+          <div class="service-tech-stack mb-3">
+            <span>HTML/JS</span>
+            <span>Leaflet/Mapbox</span>
+            <span>GeoJSON</span>
+            <span>Data Visualization</span>
+          </div>
+          <div class="analytical-chart">
+            <div class="d-flex justify-content-between text-sm mb-1">
+              <span>Stakeholder Accessibility</span>
+              <span class="text-white">100%</span>
+            </div>
+            <div class="stat-bar"><div class="stat-fill" style="width: 100%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4: Field Ecology -->
+      <div class="col-md-6 fade-in-up delay-3">
+        <div class="card service-card p-4">
+          <span class="service-tag">Field Work</span>
+          <div class="service-icon-wrapper">
+            <i class="bi bi-camera"></i>
+          </div>
+          <h3 class="mb-3">Field Ecology & Conflict Mitigation</h3>
+          <p>
+            Extensive on-ground experience tracking keystone species, managing camera trap arrays, and implementing community-based Human-Wildlife Conflict mitigation strategies.
+          </p>
+          <div class="service-tech-stack mb-3">
+            <span>Camera Trapping</span>
+            <span>Animal Tracking</span>
+            <span>Drone Surveys</span>
+            <span>Community Outreach</span>
+          </div>
+          <div class="analytical-chart">
+            <div class="d-flex justify-content-between text-sm mb-1">
+              <span>Field Verification Reliability</span>
+              <span class="text-white">Verified</span>
+            </div>
+            <div class="stat-bar"><div class="stat-fill" style="width: 85%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="theme.js"></script>
+  <script defer src="footer.js"></script>
+</body>
+
+</html>

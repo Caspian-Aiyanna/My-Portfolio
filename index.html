@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harin Aiyanna C R</title>
 
   <!-- Bootstrap & Icons -->
@@ -12,162 +13,137 @@
   <!-- Site theme -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Page-specific polish -->
   <style>
-    .home-btn {
-      border: 1.5px solid var(--wild-accent);
-      color: var(--text-light);
-      background: transparent;
-      border-radius: 8px;
-      padding: .35rem .6rem;
-      display: inline-flex;
-      align-items: center;
-      gap: .35rem;
-    }
-    .home-btn:hover {
-      background: var(--wild-accent);
-      color: var(--text-light);
+    /* Specific styling for the index page gallery grids */
+    .home-gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
-    /* Photo borders + hover */
-    .home-gallery-img {
-      border: 2px solid var(--wild-deep);
-      border-radius: 12px;
-      cursor: pointer;
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-      box-shadow: 0 6px 16px rgba(0,0,0,.25);
+    @media (min-width: 992px) {
+      .home-gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .home-photo {
       width: 100%;
-      height: 190px;
-      object-fit: cover;
-    }
-    .home-gallery-img:hover {
-      transform: translateY(-3px) scale(1.015);
-      box-shadow: 0 12px 26px rgba(0,0,0,.35);
-      border-color: var(--wild-accent);
-    }
-
-    /* Highlights frame */
-    .thin-frame {
-      border: 1px solid rgba(245, 230, 99, .7);
-      border-radius: 14px;
-      padding: 1.25rem 1.5rem;
-      background: rgba(27, 74, 55, .6);
-      backdrop-filter: blur(2px);
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .thin-frame ul { margin: 0; }
-
-    .side-gallery .g-3 > [class^="col"] { padding: .35rem; }
-    .side-gallery { max-width: 420px; margin-left: auto; margin-right: auto; }
-
-    @media (max-width: 991.98px) {
-      .home-gallery-img { height: 180px; }
-      .side-gallery { max-width: 520px; }
     }
   </style>
 </head>
 
-<body class="projects-page bg-light">
+<body class="projects-page">
+  <!-- Faded right-side background image -->
+  <div class="bg-half-right"></div>
+  <!-- Faded left-side background images (Top/Bottom) -->
+  <div class="bg-half-left-top"></div>
+  <div class="bg-half-left-bottom"></div>
+
   <!-- Shared Navbar -->
   <div id="site-nav"></div>
 
-  <!-- Hero -->
-  <section class="container text-center py-5" style="color: #000000f8;">
-    <img src="files/images/harin.png" alt="Harin Aiyanna" width="180" class="rounded-circle mb-3 shadow-sm">
-    <h1 class="fw-bold mt-3">Harin Aiyanna</h1>
-    <p class="lead">Forest Science graduate • Ecological Modelling & GIS enthusiast • Nature Conservationist</p>
+  <!-- Hero Section -->
+  <main class="container py-5">
+    <section class="text-center mb-5 fade-in-up">
+      <div class="glass-panel mx-auto pop-in delay-1"
+        style="max-width: 900px; background: transparent; box-shadow: none; border: none;">
+        <h1 class="display-3 fw-bolder fade-in-up delay-2" style="font-family: 'Outfit', sans-serif; letter-spacing: -1px; line-height: 1.2; text-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+          Bridging Wildlife Conservation and Data Science.
+        </h1>
+        <p class="lead fs-3 fade-in-up delay-3 mt-4" style="color: var(--text-light); font-weight: 500;">
+          Expert in Earth Observation, Spatial Modelling, and Ecological Data Fusion.
+        </p>
 
-    <blockquote class="mx-auto mt-3"
-            style="max-width: 700px;
-                   color:#000000f8;
-                   border-left: none;
-                   font-style: italic;
-                   font-size: 1.1rem;
-                   margin-top: 1rem;">
-  “Protecting species and landscapes through earth observation and collaboration.”
-</blockquote>
+        <div class="fade-in-up delay-4 mt-5">
+          <blockquote class="blockquote mx-auto text-start" style="max-width: 700px; border-left: 4px solid var(--wild-accent); padding-left: 1.5rem; font-style: italic;">
+            “Delivering actionable ecological insights through advanced machine learning and multi-sensor data fusion.”
+          </blockquote>
+        </div>
+        
+        <div class="mt-5 fade-in-up delay-4 d-flex flex-wrap justify-content-center gap-3">
+          <a href="services.html" class="btn btn-primary btn-lg d-inline-flex align-items-center">
+            <i class="bi bi-briefcase me-2"></i> View Services
+          </a>
+          <a href="projects.html" class="btn btn-outline-primary btn-lg d-inline-flex align-items-center">
+            <i class="bi bi-box-seam me-2"></i> View Projects
+          </a>
+        </div>
+      </div>
+    </section>
 
-  </section>
+    <!-- Centerpiece Video Section -->
+    <section class="mb-5 fade-in-up delay-4">
+      <div class="glass-panel p-2 mx-auto" style="max-width: 1000px; border-radius: 20px;">
+        <div class="position-relative w-100" style="padding-top: 56.25%; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); background: #000;">
+          <iframe class="position-absolute top-0 start-0 w-100 h-100" src="https://www.youtube.com/embed/qBJX1EVHrlw" title="NatGeo Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
 
-  <!-- Side Galleries + Highlights -->
-  <section class="container pb-5">
-    <div class="row align-items-start g-4">
-      <!-- Left Gallery -->
-      <div class="col-12 col-lg-3">
-        <div class="side-gallery">
-          <div class="row g-3">
-            <div class="col-6 col-lg-12"><img src="files/images/ele4.JPG" alt="Field Research" class="home-gallery-img"></div>
-            <div class="col-6 col-lg-12"><img src="files/images/gallery1.jpg" alt="GIS Analysis" class="home-gallery-img"></div>
-            <div class="col-6 col-lg-12"><img src="files/images/ZONATION.png" alt="Elephant Conservation" class="home-gallery-img"></div>
-            <div class="col-6 col-lg-12"><img src="files/images/gallery3.jpg" alt="Beaver SDM" class="home-gallery-img" style="width: 300; height: 400px;"></div>
+    <!-- About & Expertise Split Layout -->
+    <section class="mb-5 fade-in-up">
+      <div class="row g-5 align-items-center">
+        <!-- Text Content -->
+        <div class="col-lg-6">
+          <div class="glass-panel h-100">
+            <h2 class="mb-4">About My Work</h2>
+            <p class="lead" style="color: var(--text-light);">
+              I am a specialized researcher and ecological data scientist focused on understanding how climate change reshapes species habitats and ecological interactions.
+            </p>
+            <p>
+              My work delivers robust analytical solutions by integrating <strong class="text-white">remote sensing</strong>, <strong class="text-white">spatial modeling</strong>, and <strong class="text-white">multi-source data fusion</strong>. Currently pursuing a <strong class="text-white">PhD</strong> at the University of Padua in collaboration with Wageningen University & Research.
+            </p>
+            <p>
+              My expertise includes building <strong class="text-white">climate-informed Species Distribution Models (SDMs)</strong>, continental-scale biodiversity monitoring using <strong class="text-white">Automated Machine Learning (AutoML)</strong>, and developing interactive Web-GIS platforms like the <a href="https://biohaps.bteh.org/WEB/index.html" target="_blank" class="text-wild text-decoration-none fw-bold">BioHabs Dashboard</a>.
+            </p>
+            <p>
+              A part of my work contribution regarding elephant conservation was featured in the <strong class="text-white">NatGeo</strong> documentary above, highlighting human–wildlife coexistence in the Western Ghats of India. My ongoing research in South Africa explores elephant habitat utilization following fence removal in Kariega Game Reserve.
+            </p>
+            
+            <h5 class="mt-4 mb-3">Core Toolkit</h5>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-primary fs-6">H2O AutoML</span>
+              <span class="badge bg-primary fs-6">QGIS & ArcGIS</span>
+              <span class="badge bg-primary fs-6">R & Python</span>
+              <span class="badge bg-primary fs-6">MaxEnt & Zonation</span>
+              <span class="badge bg-secondary fs-6 text-dark border border-white border-opacity-25">Remote Sensing</span>
+              <span class="badge bg-secondary fs-6 text-dark border border-white border-opacity-25">Spatial Modeling</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Highlight Haphazard Gallery -->
+        <div class="col-lg-6">
+          <div class="haphazard-gallery">
+            <div class="haphazard-item"><img src="files/images/ele4.JPG" alt="Field Research"></div>
+            <div class="haphazard-item"><img src="files/images/gallery3.jpg" alt="Beaver SDM"></div>
+            <div class="haphazard-item"><img src="files/images/ZONATION.png" alt="Elephant Conservation"></div>
+            <div class="haphazard-item"><img src="files/images/gallery1.jpg" alt="GIS Analysis"></div>
           </div>
         </div>
       </div>
-
-      <!-- Center Highlights -->
-      <div class="col-12 col-lg-6">
-                <div class="thin-frame" style="color:#000000; font-size: 13pt;">
-                  <h3 class= "fw-bold mt-3">Welcome to my page. </h3>
-         <p class="text-start">
-   I am a passionate researcher working to understand how climate change reshapes species habitats and ecological interactions.
-My work integrates <strong>remote sensing</strong>, <strong>spatial modeling</strong>, collaborative research, and <strong>community-based conservation</strong> to bridge data-driven science with field realities.
-I have led large-scale human–elephant conflict mitigation programs involving over 500 farmers, developed <strong>climate-informed species distribution models</strong>, and contributed to various other projects. </p>
-
-         </p> I am pursuing a <strong>PhD</strong> at the University of Padua and currently in collaboration with Wageningen University & Research, Netherlands. I focus on modeling habitat dynamics of keystone species under future climate scenarios in order to develop climate informed landscap restoration poilcies.
-I bring strong analytical and spatial modeling skills with experience in <strong>QGIS</strong>, <strong>ArcGIS</strong>, <strong>R</strong>, MaxEnt, STELLA, Zonation, and <strong>Python</strong>, offering interdisciplinary expertise that connects ecological research with actionable conservation strategies. </p>
-
-        </p> A part of my work contribution regarding elephant conservation was featured in a short <strong>NatGeo</strong> documentary highlighting human–wildlife coexistence in the Western Ghats of India, and my ongoing research in South Africa explores elephant habitat utilization following fence removal in Kariega Game Reserve.</p>
-
-          <div class="text-center mt-4">
-                        <a href="projects.html" class="btn btn-wild me-2" target="_blank">View Projects</a>
-            <a href="https://youtu.be/qBJX1EVHrlw?si=0wfvtXkMwi7KVtJs"
-   class="btn btn-wild me-2 natgeo-btn" target="_blank">
-  <span class="natgeo-icon"></span> View Documentary
-</a>
-
-          </div>
-        </div>
-
-        <!-- === 1st Row of Images Below Highlights === -->
-        <div class="mt-5">
-        <div class="row g-3 justify-content-center text-center">
-        <div class="col-6 col-md-4">
-        <img src="files/images/ele.JPG" alt="Field Team" class="img-fluid home-gallery-img" style="width: auto; height: 200px;">
-        </div>
-        <div class="col-6 col-md-4">
-        <img src="files/images/out.JPG" alt="Workshop" class="img-fluid home-gallery-img" style="width: auto; height: 200px;">
-        </div>
-        </div>
-        </div>
-
-        <!-- === 2nd Row of Images Below Highlights === -->
-        <div class="mt-5">
-        <div class="row g-3 justify-content-center text-center">
-        <div class="col-6 col-md-4">
-        <img src="files/images/gallery2.1.JPG" alt="Field Team" class="img-fluid home-gallery-img">
-        </div>
-        <div class="col-6 col-md-4">
-        <img src="files/images/gallery7.jpg" alt="Workshop" class="img-fluid home-gallery-img">
-        </div>
-        </div>
-        </div>    
+    </section>
     
+    <!-- Expanded Haphazard Gallery for remaining images -->
+    <section class="fade-in-up mb-5">
+      <h3 class="text-center mb-4 pb-2">In the Field & Studio</h3>
+      <div class="haphazard-gallery">
+        <div class="haphazard-item"><img src="files/images/gallery4.jpg" alt="Team Field Work"></div>
+        <div class="haphazard-item"><img src="files/images/Trajectory_E2_pre.png" alt="Pre-fence Elephant Trajectory"></div>
+        <div class="haphazard-item"><img src="files/images/ele.JPG" alt="Field Team"></div>
+        <div class="haphazard-item"><img src="files/images/Vegetation_Landscape_5Panel.png" alt="Vegetation Landscape Analysis"></div>
+        <div class="haphazard-item"><img src="files/images/gallery5.JPG" alt="Forest Survey"></div>
+        <div class="haphazard-item"><img src="files/images/Trajectory_E4_post.png" alt="Post-fence Elephant Trajectory"></div>
+        <div class="haphazard-item"><img src="files/images/WhatsApp%20Image%202025-05-30%20at%2021.05.56.jpeg" alt="Field Work Team"></div>
+        <div class="haphazard-item"><img src="files/images/gallery8.JPG" alt="Wildlife Modeling"></div>
+        <div class="haphazard-item"><img src="files/images/Summary_Veg_Usage.png" alt="Vegetation Usage Summary"></div>
+        <div class="haphazard-item"><img src="files/images/phd4.png" alt="Outreach Workshop"></div>
+        <div class="haphazard-item"><img src="files/images/out.JPG" alt="Workshop"></div>
       </div>
+    </section>
 
-      <!-- Right Gallery -->
-      <div class="col-12 col-lg-3">
-        <div class="side-gallery">
-          <div class="row g-3">
-            <div class="col-6 col-lg-12"><img src="files/images/gallery5.JPG" alt="Forest Survey" class="home-gallery-img"></div>
-            <div class="col-6 col-lg-12"><img src="files/images/gallery4.jpg" alt="Team Field Work" class="home-gallery-img"></div>
-            <div class="col-6 col-lg-12"><img src="files/images/gallery8.JPG" alt="Wildlife Modeling" class="home-gallery-img"></div>
-            <div class="col-6 col-lg-12"><img src="files/images/phd4.png" alt="Outreach Workshop" class="home-gallery-img" style="width: 300px; height: 400px;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- Shared Footer -->
   <div id="site-footer"></div>
@@ -177,23 +153,6 @@ I bring strong analytical and spatial modeling skills with experience in <strong
   <script defer src="nav.js"></script>
   <script defer src="theme.js"></script>
   <script defer src="footer.js"></script>
-
-  <!-- Add small Home icon next to theme toggle -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      setTimeout(function () {
-        var themeBtn = document.getElementById('themeToggle');
-        if (!themeBtn) return;
-        if (themeBtn.parentNode.querySelector('.home-btn')) return;
-
-        var home = document.createElement('a');
-        home.href = 'index.html';
-        home.className = 'home-btn btn btn-sm ms-2';
-        home.setAttribute('aria-label', 'Home');
-        home.innerHTML = '<i class="bi bi-house-door-fill"></i><span class="d-none d-md-inline">Home</span>';
-        themeBtn.parentNode.appendChild(home);
-      }, 0);
-    });
-  </script>
 </body>
+
 </html>

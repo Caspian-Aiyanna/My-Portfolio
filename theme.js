@@ -33,5 +33,14 @@
   // Wire up after navbar has been injected
   window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => { if (btn()) btn().addEventListener("click", toggle); }, 0);
+    
+    // Dynamically load paws.js for reactive background
+    const pawScript = document.createElement("script");
+    const themeScript = document.querySelector('script[src$="theme.js"]');
+    if (themeScript) {
+      pawScript.src = themeScript.src.replace("theme.js", "paws.js");
+      pawScript.defer = true;
+      document.body.appendChild(pawScript);
+    }
   });
 })();
